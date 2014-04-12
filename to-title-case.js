@@ -18,6 +18,7 @@ module.exports.toTitleCase = module.exports
 
 var laxWords = require('./articles').concat(require('./prepositions')).concat(require('./conjunctions'))
       .concat(smallWords.source.replace(/(^\^\(|\)\$$)/g, '').split('|'))
+      .concat(['is']) // a personal preference
   , laxWordsRe = new RegExp('^(' + laxWords.join('|') + ')$', 'i')
 
 module.exports.toLaxTitleCase = function toLaxTitleCase(str){
