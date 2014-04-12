@@ -1,3 +1,28 @@
+# David Gouch's String#toTitleCase() for Node.js
+
+This is a fork of David Gouch's excellent [`String#toTitleCase()`](https://github.com/gouch/to-title-case) method inspired by John Gruber's [post on the topic](http://daringfireball.net/2008/08/title_case_update)
+
+I've simply taken it off the `String` prototype and exported it from a simple module.
+
+```js
+var toTitleCase = require('titlecase')
+
+console.log(toTitleCase('foo bar baz'))
+```
+
+See [Gouch's page](http://individed.com/code/to-title-case/) with inline converter. Also see this excellent **[table of test case results](http://individed.com/code/to-title-case/tests.html)** for different converters.
+
+In addition, I've added a more comprehensive list of words to not capitalise that includes articles, prepositions and conjunctions (see source files for lists), I'm calling this "lax title case", use it like so:
+
+
+```js
+var toLaxTitleCase = require('titlecase').toLaxTitleCase
+
+console.log(toLaxTitleCase('foo bar baz'))
+```
+
+*Original README:*
+
 # To Title Case for JavaScript
 
 Instructions: Include the to-title-case.js script and use the new .toTitleCase() method on the string you want converted.
