@@ -17,6 +17,7 @@ module.exports = function toTitleCase(str){
 module.exports.toTitleCase = module.exports
 
 var laxWords = require('./articles').concat(require('./prepositions')).concat(require('./conjunctions'))
+      .concat(smallWords.source.replace(/(^\^\(|\)\$$)/g, '').split('|'))
   , laxWordsRe = new RegExp('^(' + laxWords.join('|') + ')$', 'i')
 
 module.exports.toLaxTitleCase = function toLaxTitleCase(str){
@@ -25,6 +26,8 @@ module.exports.toLaxTitleCase = function toLaxTitleCase(str){
 
 
 function titleCase (str, smallWords) {
+  if (!str)
+    return str
   return str.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
     if (index > 0 && index + match.length !== title.length &&
       match.search(smallWords) > -1 && title.charAt(index - 2) !== ':' &&
