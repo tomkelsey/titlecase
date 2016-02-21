@@ -1,9 +1,10 @@
-﻿/* 
-  * To Title Case 2.1 – http://individed.com/code/to-title-case/
-  * Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
- */
+#!/usr/bin/env node
+
 
 /*
+ * To Title Case 2.1 – http://individed.com/code/to-title-case/
+ * Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
+ *
  * modifications by @rvagg Apr-2014
  */
 
