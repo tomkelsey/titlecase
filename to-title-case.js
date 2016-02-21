@@ -11,15 +11,21 @@
 
 
 var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+
+
 module.exports = function toTitleCase(str){
   return titleCase(str, smallWords)
 }
+
+
 module.exports.toTitleCase = module.exports
+
 
 var laxWords = require('./articles').concat(require('./prepositions')).concat(require('./conjunctions'))
       .concat(smallWords.source.replace(/(^\^\(|\)\$$)/g, '').split('|'))
       .concat(['is']) // a personal preference
   , laxWordsRe = new RegExp('^(' + laxWords.join('|') + ')$', 'i')
+
 
 module.exports.toLaxTitleCase = function toLaxTitleCase(str){
   return titleCase(str, laxWordsRe)
@@ -43,4 +49,11 @@ function titleCase (str, smallWords) {
 
     return match.charAt(0).toUpperCase() + match.substr(1);
   });
+}
+
+
+if (require.main === module) {
+  process.argv.slice(2).forEach(function (a) {
+    console.log(module.exports.toTitleCase(a))
+  })
 }
