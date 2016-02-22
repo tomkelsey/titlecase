@@ -17,6 +17,6 @@
   "author": "Rod Vagg <rod@vagg.org>",
   "license": "MIT",
   "bin": {
-    "to-title-case": "./to-title-case.js"
+    "to-title-case": "./bin.js"
   }
 }

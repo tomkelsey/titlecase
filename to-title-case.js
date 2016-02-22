@@ -1,6 +1,3 @@
-#!/usr/bin/env node
-
-
 /*
  * To Title Case 2.1 – http://individed.com/code/to-title-case/
  * Copyright © 2008–2013 David Gouch. Licensed under the MIT License.
@@ -50,11 +47,4 @@ function titleCase (str, smallWords) {
 
     return match.charAt(0).toUpperCase() + match.substr(1);
   });
-}
-
-
-if (require.main === module) {
-  process.argv.slice(2).forEach(function (a) {
-    console.log(module.exports.toTitleCase(a))
-  })
 }
