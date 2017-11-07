@@ -74,7 +74,6 @@ module.exports = [
   , 'past'
   , 'per'
   , 'plus'
-  , 'pro'
   , 'qua'
   , 'regarding'
   , 'round'
